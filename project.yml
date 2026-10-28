@@ -1,0 +1,47 @@
+# Проект Xcode генерируется из этого файла: `xcodegen generate`.
+# .xcodeproj в репозиторий не кладём — его собирает CI (и любой Mac) из project.yml.
+name: Intelegent
+
+options:
+  bundleIdPrefix: shop.intelegent
+  deploymentTarget:
+    iOS: "17.0"
+  developmentLanguage: ru
+
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  Intelegent:
+    type: application
+    platform: iOS
+    sources:
+      - path: Intelegent
+    scheme: {}
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: shop.intelegent.app
+        PRODUCT_NAME: INTELEGENTOFF
+        TARGETED_DEVICE_FAMILY: "1"
+        ENABLE_PREVIEWS: YES
+        GENERATE_INFOPLIST_FILE: NO
+    info:
+      path: Intelegent/Info.plist
+      properties:
+        CFBundleDisplayName: INTELEGENTOFF
+        CFBundleDevelopmentRegion: ru
+        UILaunchScreen:
+          UIColorName: ""
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIAppFonts:
+          - Montserrat-Regular.ttf
+          - Montserrat-Medium.ttf
+          - Montserrat-SemiBold.ttf
+          - Montserrat-Bold.ttf
+        ITSAppUsesNonExemptEncryption: false

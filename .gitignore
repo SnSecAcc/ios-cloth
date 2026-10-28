@@ -1,0 +1,27 @@
+# Xcode — проект генерируется из project.yml
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+DerivedData/
+build/
+.build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Info.plist генерирует XcodeGen
+Intelegent/Info.plist
+
+# Секреты и подпись — никогда не коммитим
+.env
+.env.*
+*.p12
+*.cer
+*.mobileprovision
+*.p8
+Secrets.xcconfig
+
+# Системное
+.DS_Store
+.idea/
+screenshots/
