@@ -55,6 +55,9 @@ jobs:
             build > build.log 2>&1 || STATUS=$?
           # Короткая выжимка: ошибки и предупреждения по нашему коду
           grep -E "error:|warning: .*/Intelegent/|BUILD (SUCCEEDED|FAILED)" build.log | sort -u || true
+          # Ошибки компиляции — аннотациями: их видно на странице запуска и через API без скачивания логов
+          grep -E "^/.*:[0-9]+:[0-9]+: error: " build.log | sort -u | head -50 | \
+            sed -E "s#^$GITHUB_WORKSPACE/##; s#^([^:]+):([0-9]+):([0-9]+): error: (.*)#::error file=\1,line=\2,col=\3::\4#" || true
           exit $STATUS
 
       - name: Screenshots
